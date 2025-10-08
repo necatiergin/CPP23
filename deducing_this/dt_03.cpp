@@ -23,7 +23,7 @@ public:
         throw std::bad_optional_access();
     }
 
-    // version of value for non-const rvalues... are you bored yet?
+    // version of value for non-const rvalues
     constexpr T&& value()&&
     {
         if (has_value()) {
@@ -32,7 +32,7 @@ public:
         throw std::bad_optional_access();
     }
 
-    // you sure are by this point
+    
     constexpr T const&& value() const&&
     {
         if (has_value()) {
