@@ -1,12 +1,12 @@
 #include <iostream>
 
-struct Widget {
-    void foo(this Widget& self)
+struct Nec {
+    void foo(this Nec& self)
     {
         std::cout << "&self = " << &self << '\n';
     }
-    
-    void bar(this Widget selfcopy)
+
+    void bar(this Nec selfcopy)
     {
         std::cout << "&selfcopy = " << &selfcopy << '\n';
     }
@@ -15,10 +15,9 @@ struct Widget {
 
 int main()
 {
-    Widget x{};
+    Nec x{};
 
     std::cout << "&x = " << &x << '\n';
     x.foo();
     x.bar();
 }
-
